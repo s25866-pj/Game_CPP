@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/damian/CLionProjects/Game_CPP/cmake-build-debug",
-		"source" : "/home/damian/CLionProjects/Game_CPP"
+		"build" : "/home/damian/Pulpit/CPP/Game/cmake-build-debug",
+		"source" : "/home/damian/Pulpit/CPP/Game"
 	},
 	"version" : 
 	{
