@@ -1,6 +1,5 @@
 #include <SDL2/SDL.h>
 #include <iostream>
-#include <SDL2/SDL_image.h>
 #include "Player.h"
 #include "ImportIMG.h"
 #include "LoadAnimation.h"
@@ -53,7 +52,7 @@ int main(int argc, char* args[]) {
             }
         }
         player.updatePosition();
-        if (player.isEntityOnFloor()) {
+        if (player.touchSolid()) {
             player.onFloor = true;
             player.inAir = false;
             player.airSpeed = 0;

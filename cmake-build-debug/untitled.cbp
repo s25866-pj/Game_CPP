@@ -87,6 +87,9 @@
 		<Unit filename="/home/damian/Pulpit/CPP/Game/ImportIMG.h">
 			<Option target="untitled"/>
 		</Unit>
+		<Unit filename="/home/damian/Pulpit/CPP/Game/LevelManager.h">
+			<Option target="untitled"/>
+		</Unit>
 		<Unit filename="/home/damian/Pulpit/CPP/Game/LoadAnimation.h">
 			<Option target="untitled"/>
 		</Unit>

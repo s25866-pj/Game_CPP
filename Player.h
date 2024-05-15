@@ -80,5 +80,9 @@ public:
         }
     }
 
+    bool touchSolid() {
+
+        return false;
+    }
 };
 #endif //UNTITLED_PLAYER_H
