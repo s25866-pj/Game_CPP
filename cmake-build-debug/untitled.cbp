@@ -84,6 +84,15 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/damian/Pulpit/CPP/Game/ImportIMG.h">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="/home/damian/Pulpit/CPP/Game/LoadAnimation.h">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="/home/damian/Pulpit/CPP/Game/Player.h">
+			<Option target="untitled"/>
+		</Unit>
 		<Unit filename="/home/damian/Pulpit/CPP/Game/main.cpp">
 			<Option target="untitled"/>
 		</Unit>

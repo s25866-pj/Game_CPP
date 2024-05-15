@@ -282,4 +282,7 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc /usr/include/SDL2/SDL_image.h \
- /usr/include/SDL2/SDL.h
+ /usr/include/SDL2/SDL.h /home/damian/Pulpit/CPP/Game/Player.h \
+ /usr/include/SDL2/SDL_keycode.h /home/damian/Pulpit/CPP/Game/ImportIMG.h \
+ /usr/include/SDL2/SDL_surface.h \
+ /home/damian/Pulpit/CPP/Game/LoadAnimation.h

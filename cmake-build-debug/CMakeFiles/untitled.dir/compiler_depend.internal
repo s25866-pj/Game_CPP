@@ -3,6 +3,8 @@
 
 CMakeFiles/untitled.dir/main.cpp.o
  /home/damian/Pulpit/CPP/Game/main.cpp
+ /home/damian/Pulpit/CPP/Game/ImportIMG.h
+ /home/damian/Pulpit/CPP/Game/Player.h
  /usr/include/SDL2/SDL.h
  /usr/include/SDL2/SDL_assert.h
  /usr/include/SDL2/SDL_atomic.h
