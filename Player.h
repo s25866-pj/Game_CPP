@@ -6,7 +6,7 @@
 #define UNTITLED_PLAYER_H
 
 #include <SDL2/SDL_keycode.h>
-int windowW=640*2,windowH=400*2;
+int windowW=640*2,windowH=416*2;
 class Player {
 public:
     int pos_X = 0;

@@ -4,7 +4,29 @@
 #include "ImportIMG.h"
 #include "LoadAnimation.h"
 using namespace std;
+void addBackground(SDL_Renderer* renderer) {
+    // Wczytaj obraz tła
+    SDL_Surface* backgroundSurface = IMG_Load("background.jpg"); // Zmień na odpowiednią ścieżkę i nazwę Twojego obrazu tła
+    if (!backgroundSurface) {
+        std::cerr << "Nie można wczytać obrazu tła: " << SDL_GetError() << std::endl;
+        return;
+    }
 
+    // Utwórz teksturę z obrazu tła
+    SDL_Texture* backgroundTexture = SDL_CreateTextureFromSurface(renderer, backgroundSurface);
+    if (!backgroundTexture) {
+        std::cerr << "Nie można utworzyć tekstury tła: " << SDL_GetError() << std::endl;
+        SDL_FreeSurface(backgroundSurface);
+        return;
+    }
+
+    // Renderuj tło na całej powierzchni okna
+    SDL_RenderCopy(renderer, backgroundTexture, NULL, NULL);
+
+    // Zwolnij pamięć zajętą przez powierzchnię obrazu tła
+    SDL_FreeSurface(backgroundSurface);
+    // Nie zwalniaj tekstury, ponieważ będzie używana w pętli gry
+}
 int main(int argc, char* args[]) {
     Player player;
     int actionType=0;
@@ -26,6 +48,7 @@ int main(int argc, char* args[]) {
         SDL_Quit();
         return 1;
     }
+    addBackground(renderer);
     SDL_Texture* texture;
     SDL_Rect rect = { player.pos_X, player.pos_Y, player.width, player.height };
 
