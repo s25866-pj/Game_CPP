@@ -18,4 +18,5 @@ SDL_Surface* importIMG(Player& player) {
     }
     return surface;
 }
+
 #endif //UNTITLED_IMPORTIMG_H

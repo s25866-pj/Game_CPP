@@ -3,6 +3,7 @@
 
 CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
   /home/damian/Pulpit/CPP/Game/ImportIMG.h \
+  /home/damian/Pulpit/CPP/Game/LevelManager.h \
   /home/damian/Pulpit/CPP/Game/LoadAnimation.h \
   /home/damian/Pulpit/CPP/Game/Player.h \
   /usr/include/SDL2/SDL.h \
@@ -96,16 +97,20 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
   /usr/include/c++/11/bits/specfun.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/bits/stl_algobase.h \
+  /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/stl_construct.h \
   /usr/include/c++/11/bits/stl_function.h \
   /usr/include/c++/11/bits/stl_iterator.h \
   /usr/include/c++/11/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/11/bits/stl_iterator_base_types.h \
   /usr/include/c++/11/bits/stl_pair.h \
+  /usr/include/c++/11/bits/stl_uninitialized.h \
+  /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/streambuf.tcc \
   /usr/include/c++/11/bits/streambuf_iterator.h \
   /usr/include/c++/11/bits/string_view.tcc \
   /usr/include/c++/11/bits/stringfwd.h \
+  /usr/include/c++/11/bits/vector.tcc \
   /usr/include/c++/11/cctype \
   /usr/include/c++/11/cerrno \
   /usr/include/c++/11/clocale \
@@ -154,6 +159,7 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
   /usr/include/c++/11/tr1/special_function_util.h \
   /usr/include/c++/11/type_traits \
   /usr/include/c++/11/typeinfo \
+  /usr/include/c++/11/vector \
   /usr/include/ctype.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
@@ -368,17 +374,17 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/uintrintrin.h:
 
-/usr/include/sched.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/tsxldtrkintrin.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/f16cintrin.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/tmmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/tbmintrin.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
 /usr/include/c++/11/tr1/special_function_util.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/tsxldtrkintrin.h:
 
 /usr/include/c++/11/tr1/legendre_function.tcc:
 
@@ -466,6 +472,10 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 
 /usr/include/c++/11/bits/cpp_type_traits.h:
 
+/usr/include/c++/11/bits/stl_vector.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
+
 /usr/include/c++/11/bits/stl_pair.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vp2intersectintrin.h:
@@ -481,6 +491,12 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 /usr/include/c++/11/bits/stl_iterator.h:
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/usr/include/c++/11/bits/vector.tcc:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/wmmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vnniintrin.h:
 
 /usr/include/c++/11/bits/ptr_traits.h:
 
@@ -514,7 +530,9 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
-/usr/include/SDL2/SDL_platform.h:
+/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+
+/usr/include/c++/11/bits/istream.tcc:
 
 /usr/include/SDL2/SDL_mutex.h:
 
@@ -536,6 +554,8 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 
 /usr/include/c++/11/cerrno:
 
+/usr/include/sched.h:
+
 /usr/include/SDL2/begin_code.h:
 
 /usr/include/SDL2/SDL_config.h:
@@ -544,11 +564,9 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 
 /usr/include/SDL2/SDL_keycode.h:
 
-/usr/include/stdc-predef.h:
+/usr/include/c++/11/bits/stl_bvector.h:
 
-/usr/include/x86_64-linux-gnu/sys/select.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/cldemoteintrin.h:
+/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 
 /usr/include/SDL2/SDL_scancode.h:
 
@@ -560,6 +578,8 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/popcntintrin.h:
 
+/usr/include/c++/11/vector:
+
 /usr/include/c++/11/bits/localefwd.h:
 
 /usr/include/SDL2/SDL_hints.h:
@@ -570,19 +590,9 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 
 /usr/include/c++/11/new:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/tbmintrin.h:
+/home/damian/Pulpit/CPP/Game/LevelManager.h:
 
-/usr/include/math.h:
-
-/usr/include/c++/11/tr1/poly_hermite.tcc:
-
-/home/damian/Pulpit/CPP/Game/Player.h:
-
-/usr/include/c++/11/bits/stl_algobase.h:
-
-/usr/include/c++/11/bits/ostream.tcc:
-
-/usr/include/SDL2/SDL_assert.h:
+/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/xsaveoptintrin.h:
 
@@ -624,17 +634,25 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
+/usr/include/c++/11/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/11/bits/exception_ptr.h:
+
+/usr/include/ctype.h:
+
+/usr/include/c++/11/bits/ostream_insert.h:
+
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
 /usr/include/SDL2/SDL_sensor.h:
 
 /usr/include/SDL2/SDL.h:
 
-/usr/include/c++/11/bits/stl_iterator_base_types.h:
+/usr/include/c++/11/bits/stl_algobase.h:
 
-/usr/include/c++/11/bits/exception_ptr.h:
+/usr/include/c++/11/bits/ostream.tcc:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
+/usr/include/SDL2/SDL_assert.h:
 
 /usr/include/SDL2/SDL_audio.h:
 
@@ -650,20 +668,6 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/pconfigintrin.h:
 
-/usr/include/c++/11/bits/charconv.h:
-
-/usr/include/c++/11/ext/alloc_traits.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/pkuintrin.h:
-
-/usr/include/x86_64-linux-gnu/sys/types.h:
-
-/usr/include/c++/11/bits/exception.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
-
-/home/damian/Pulpit/CPP/Game/main.cpp:
-
 /home/damian/Pulpit/CPP/Game/LoadAnimation.h:
 
 /usr/include/SDL2/SDL_quit.h:
@@ -677,6 +681,22 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 /usr/include/SDL2/SDL_rect.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/fxsrintrin.h:
+
+/usr/include/c++/11/bits/charconv.h:
+
+/usr/include/c++/11/ext/alloc_traits.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/pkuintrin.h:
+
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/c++/11/cwctype:
+
+/usr/include/c++/11/bits/exception.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
+
+/home/damian/Pulpit/CPP/Game/main.cpp:
 
 /usr/include/SDL2/SDL_mouse.h:
 
@@ -693,6 +713,8 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 /usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:
 
 /usr/include/SDL2/SDL_events.h:
+
+/usr/include/SDL2/SDL_platform.h:
 
 /usr/include/SDL2/SDL_system.h:
 
@@ -764,27 +786,35 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 
 /usr/include/c++/11/bits/exception_defines.h:
 
-/usr/include/pthread.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
 
-/usr/include/stdint.h:
-
-/usr/include/errno.h:
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
 /usr/include/c++/11/bits/functional_hash.h:
-
-/usr/include/c++/11/cwctype:
 
 /usr/include/c++/11/bits/std_abs.h:
 
 /usr/include/SDL2/SDL_main.h:
 
-/usr/include/c++/11/bits/ostream_insert.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/f16cintrin.h:
 
-/usr/include/ctype.h:
+/usr/include/c++/11/tr1/poly_hermite.tcc:
 
-/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+/home/damian/Pulpit/CPP/Game/Player.h:
 
-/usr/include/c++/11/bits/istream.tcc:
+/usr/include/math.h:
+
+/usr/include/pthread.h:
+
+/usr/include/stdc-predef.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/cldemoteintrin.h:
+
+/usr/include/errno.h:
+
+/usr/include/stdint.h:
 
 /usr/include/stdio.h:
 
@@ -819,8 +849,6 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
@@ -864,6 +892,10 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
 /usr/include/SDL2/SDL_thread.h:
@@ -882,8 +914,6 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vnnivlintrin.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/tmmintrin.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
 /usr/include/c++/11/typeinfo:
@@ -899,8 +929,6 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
-
-/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
 /usr/include/x86_64-linux-gnu/bits/errno.h:
 
@@ -933,10 +961,6 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512ifmavlintrin.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
 
 /usr/include/SDL2/SDL_keyboard.h:
 
@@ -990,10 +1014,6 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vldqintrin.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/wmmintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vnniintrin.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vp2intersectvlintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vpopcntdqintrin.h:
@@ -1015,6 +1035,8 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx5124fmapsintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h:
+
+/usr/include/c++/11/bits/stl_uninitialized.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/fmaintrin.h:
 
@@ -1045,7 +1067,3 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
 /usr/lib/gcc/x86_64-linux-gnu/11/include/rtmintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/shaintrin.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:

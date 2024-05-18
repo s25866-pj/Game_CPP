@@ -1,36 +1,21 @@
-#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include <iostream>
 #include "Player.h"
 #include "ImportIMG.h"
 #include "LoadAnimation.h"
+#include "LevelManager.h"
+
 using namespace std;
-void addBackground(SDL_Renderer* renderer) {
-    // Wczytaj obraz tła
-    SDL_Surface* backgroundSurface = IMG_Load("background.jpg"); // Zmień na odpowiednią ścieżkę i nazwę Twojego obrazu tła
-    if (!backgroundSurface) {
-        std::cerr << "Nie można wczytać obrazu tła: " << SDL_GetError() << std::endl;
-        return;
-    }
 
-    // Utwórz teksturę z obrazu tła
-    SDL_Texture* backgroundTexture = SDL_CreateTextureFromSurface(renderer, backgroundSurface);
-    if (!backgroundTexture) {
-        std::cerr << "Nie można utworzyć tekstury tła: " << SDL_GetError() << std::endl;
-        SDL_FreeSurface(backgroundSurface);
-        return;
-    }
-
-    // Renderuj tło na całej powierzchni okna
-    SDL_RenderCopy(renderer, backgroundTexture, NULL, NULL);
-
-    // Zwolnij pamięć zajętą przez powierzchnię obrazu tła
-    SDL_FreeSurface(backgroundSurface);
-    // Nie zwalniaj tekstury, ponieważ będzie używana w pętli gry
-}
 int main(int argc, char* args[]) {
     Player player;
-    int actionType=0;
-    SDL_Init(SDL_INIT_EVERYTHING);
+    int actionType = 0;
+
+    if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
+        std::cerr << "SDL_Init Error: " << SDL_GetError() << std::endl;
+        return 1;
+    }
+
     SDL_Window* window = SDL_CreateWindow("Moja Gra w CPP",
                                           SDL_WINDOWPOS_UNDEFINED,
                                           SDL_WINDOWPOS_UNDEFINED,
@@ -38,6 +23,7 @@ int main(int argc, char* args[]) {
                                           SDL_WINDOW_SHOWN);
     if (!window) {
         std::cerr << "Nie można utworzyć okna: " << SDL_GetError() << std::endl;
+        SDL_Quit();
         return 1;
     }
 
@@ -48,20 +34,50 @@ int main(int argc, char* args[]) {
         SDL_Quit();
         return 1;
     }
-    addBackground(renderer);
-    SDL_Texture* texture;
-    SDL_Rect rect = { player.pos_X, player.pos_Y, player.width, player.height };
 
+    if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG)) {
+        std::cerr << "SDL_image could not initialize! SDL_image Error: " << IMG_GetError() << std::endl;
+        SDL_DestroyRenderer(renderer);
+        SDL_DestroyWindow(window);
+        SDL_Quit();
+        return 1;
+    }
+
+    LevelManager levelManager;
+    if (!levelManager.loadBackground(renderer)) {
+        std::cerr << "Failed to load background!" << std::endl;
+        SDL_DestroyRenderer(renderer);
+        SDL_DestroyWindow(window);
+        IMG_Quit();
+        SDL_Quit();
+        return 1;
+    }
+
+    const char* levelReader = "Level_1.png";  // Provide the correct path to your level image
+    SDL_Surface* tempSurface = IMG_Load(levelReader);
+    if (!tempSurface) {
+        std::cerr << "Unable to load image " << levelReader << "! SDL_image Error: " << IMG_GetError() << std::endl;
+        SDL_DestroyRenderer(renderer);
+        SDL_DestroyWindow(window);
+        IMG_Quit();
+        SDL_Quit();
+        return 1;
+    }
+    player.backgroundSurface = tempSurface;
+
+    SDL_Texture* texture = nullptr;
+    SDL_Rect rect = { player.pos_X, player.pos_Y, player.width, player.height };
     SDL_Event event;
     bool quit = false;
-    float imageCounter=0;
+    float imageCounter = 0;
+
     while (!quit) {
-        if(player.moving){
-            actionType=1;
+        if (player.moving) {
+            actionType = 1;
+        } else {
+            actionType = 0;
         }
-        else{
-            actionType=0;
-        }
+
         while (SDL_PollEvent(&event)) {
             switch (event.type) {
                 case SDL_QUIT:
@@ -70,55 +86,57 @@ int main(int argc, char* args[]) {
                 case SDL_KEYDOWN:
                 case SDL_KEYUP:
                     player.handleInput(event.key.keysym.sym, event.type == SDL_KEYDOWN);
-                     // Pass window size here
                     break;
             }
         }
+
         player.updatePosition();
-        if (player.touchSolid()) {
-            player.onFloor = true;
-            player.inAir = false;
-            player.airSpeed = 0;
-        } else {
-            player.onFloor = false;
-        }
-        SDL_Surface* surface = loadAnimations(player, (int) imageCounter, actionType);
+        rect.x = player.pos_X;
+        rect.y = player.pos_Y;
+
+        SDL_Surface* surface = loadAnimations(player, (int)imageCounter, actionType);
         if (!surface) {
+            std::cerr << "Nie można wczytać animacji: " << SDL_GetError() << std::endl;
             SDL_DestroyRenderer(renderer);
             SDL_DestroyWindow(window);
+            IMG_Quit();
             SDL_Quit();
             return 1;
         }
+
         texture = SDL_CreateTextureFromSurface(renderer, surface);
         SDL_FreeSurface(surface);
         if (!texture) {
             std::cerr << "Nie można utworzyć tekstury: " << SDL_GetError() << std::endl;
             SDL_DestroyRenderer(renderer);
             SDL_DestroyWindow(window);
+            IMG_Quit();
             SDL_Quit();
             return 1;
         }
-        rect.x = player.pos_X;
-        rect.y = player.pos_Y;
 
-        SDL_SetRenderDrawColor(renderer, 242, 5, 191, 255);
         SDL_RenderClear(renderer);
+        levelManager.renderBackground(renderer);
         SDL_RenderCopy(renderer, texture, NULL, &rect);
         SDL_RenderPresent(renderer);
-        if(imageCounter<4){
-            imageCounter+=0.25;
-        }else{
-            imageCounter=0;
+
+        SDL_DestroyTexture(texture);
+
+        if (imageCounter < 4) {
+            imageCounter += 0.25;
+        } else {
+            imageCounter = 0;
         }
+
         SDL_Delay(25);
     }
 
-    std::cout << "Dziękuję za grę";
+    std::cout << "Dziękuję za grę" << std::endl;
     SDL_Delay(1000);
 
-    SDL_DestroyTexture(texture);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
+    IMG_Quit();
     SDL_Quit();
     return 0;
 }

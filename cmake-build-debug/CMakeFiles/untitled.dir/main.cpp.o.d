@@ -1,7 +1,7 @@
 CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
- /usr/include/stdc-predef.h /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
- /usr/include/SDL2/SDL_config.h \
+ /usr/include/stdc-predef.h /usr/include/SDL2/SDL_image.h \
+ /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
+ /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
  /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \
  /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
  /usr/include/SDL2/close_code.h /usr/include/x86_64-linux-gnu/sys/types.h \
@@ -282,7 +282,11 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/Pulpit/CPP/Game/main.cpp \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/damian/Pulpit/CPP/Game/Player.h /usr/include/SDL2/SDL_keycode.h \
+ /home/damian/Pulpit/CPP/Game/Player.h /usr/include/SDL2/SDL.h \
  /home/damian/Pulpit/CPP/Game/ImportIMG.h /usr/include/SDL2/SDL_surface.h \
- /usr/include/SDL2/SDL_image.h /usr/include/SDL2/SDL.h \
- /home/damian/Pulpit/CPP/Game/LoadAnimation.h
+ /home/damian/Pulpit/CPP/Game/LoadAnimation.h \
+ /home/damian/Pulpit/CPP/Game/LevelManager.h /usr/include/c++/11/vector \
+ /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/bits/stl_vector.h \
+ /usr/include/c++/11/bits/stl_bvector.h \
+ /usr/include/c++/11/bits/vector.tcc
