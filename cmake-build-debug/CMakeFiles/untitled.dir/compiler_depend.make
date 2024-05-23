@@ -5,6 +5,7 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/CLionProjects/Game_CPP/main.cpp
   /home/damian/CLionProjects/Game_CPP/ImportIMG.h \
   /home/damian/CLionProjects/Game_CPP/LoadAnimation.h \
   /home/damian/CLionProjects/Game_CPP/LoadLevel.h \
+  /home/damian/CLionProjects/Game_CPP/Pixel.h \
   /home/damian/CLionProjects/Game_CPP/Player.h \
   /usr/include/SDL2/SDL.h \
   /usr/include/SDL2/SDL_assert.h \
@@ -380,17 +381,11 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/CLionProjects/Game_CPP/main.cpp
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/tbmintrin.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:
+
 /usr/include/c++/11/tr1/special_function_util.h:
 
 /usr/include/c++/11/tr1/legendre_function.tcc:
-
-/usr/include/linux/errno.h:
-
-/usr/include/c++/11/iostream:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512dqintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vlintrin.h:
 
 /usr/include/c++/11/tr1/gamma.tcc:
 
@@ -407,6 +402,14 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/CLionProjects/Game_CPP/main.cpp
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
 /usr/include/c++/11/new:
+
+/usr/include/c++/11/iostream:
+
+/usr/include/linux/errno.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512dqintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vlintrin.h:
 
 /usr/include/c++/11/tr1/riemann_zeta.tcc:
 
@@ -494,6 +497,8 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/CLionProjects/Game_CPP/main.cpp
 
 /usr/include/c++/11/bits/stl_iterator.h:
 
+/home/damian/CLionProjects/Game_CPP/Pixel.h:
+
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
 /usr/include/c++/11/bits/vector.tcc:
@@ -537,6 +542,14 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/CLionProjects/Game_CPP/main.cpp
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
 /usr/include/c++/11/bits/istream.tcc:
+
+/home/damian/CLionProjects/Game_CPP/LoadLevel.h:
+
+/usr/include/SDL2/SDL_pixels.h:
+
+/usr/include/c++/11/bits/ios_base.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/pconfigintrin.h:
 
 /usr/include/SDL2/SDL_mutex.h:
 
@@ -588,11 +601,11 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/CLionProjects/Game_CPP/main.cpp
 
 /usr/include/c++/11/bits/alloc_traits.h:
 
-/home/damian/CLionProjects/Game_CPP/Player.h:
-
 /usr/include/SDL2/SDL_mouse.h:
 
 /usr/include/SDL2/SDL_events.h:
+
+/home/damian/CLionProjects/Game_CPP/Player.h:
 
 /usr/include/c++/11/vector:
 
@@ -658,14 +671,6 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/CLionProjects/Game_CPP/main.cpp
 
 /usr/include/SDL2/SDL_loadso.h:
 
-/home/damian/CLionProjects/Game_CPP/LoadLevel.h:
-
-/usr/include/SDL2/SDL_pixels.h:
-
-/usr/include/c++/11/bits/ios_base.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/pconfigintrin.h:
-
 /usr/include/ctype.h:
 
 /usr/include/c++/11/bits/ostream_insert.h:
@@ -727,8 +732,6 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/CLionProjects/Game_CPP/main.cpp
 /usr/include/c++/11/tr1/hypergeometric.tcc:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512bf16intrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:
 
 /usr/include/c++/11/bits/locale_classes.tcc:
 
@@ -1002,9 +1005,9 @@ CMakeFiles/untitled.dir/main.cpp.o: /home/damian/CLionProjects/Game_CPP/main.cpp
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vbmivlintrin.h:
 
-/usr/include/c++/11/bits/specfun.h:
-
 /usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/c++/11/bits/specfun.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/clflushoptintrin.h:
 

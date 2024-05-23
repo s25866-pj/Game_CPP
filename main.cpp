@@ -82,9 +82,8 @@ int main(int argc, char* args[]) {
         rect.x = player.pos_X;
         rect.y = player.pos_Y;
 
-        checkPlayerPixel(player,masks);
+//        checkPlayerPixel(player,masks);
         SDL_RenderCopy(renderer, DrawMap(renderer, masks), NULL, &backgroundRect);
-//        SDL_RenderClear(renderer);
         SDL_RenderCopy(renderer, texture, NULL, &rect);
         SDL_RenderPresent(renderer);
         if(imageCounter<4){
@@ -103,27 +102,4 @@ int main(int argc, char* args[]) {
     SDL_DestroyWindow(window);
     SDL_Quit();
     return 0;
-}
-SDL_Texture* DrawMap(SDL_Renderer* renderer, vector<vector<Pixel>> &vector1) {
-    int pixelWidth = vector1[0][0].size_X;
-    int pixelHeight = vector1[0][0].size_Y;
-    int textureWidth = pixelWidth * vector1.size();
-    int textureHeight = pixelHeight * vector1[0].size();
-
-    SDL_Texture* texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, textureWidth, textureHeight);
-    SDL_SetRenderTarget(renderer, texture);
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
-    SDL_RenderClear(renderer);
-
-    for (size_t i = 0; i < vector1.size(); i++) {
-        for (size_t j = 0; j < vector1[i].size(); j++) {
-            SDL_Rect rect = {static_cast<int>(i * pixelWidth), static_cast<int>(j * pixelHeight), pixelWidth, pixelHeight};
-            SDL_Color color = vector1[i][j].color;
-            SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
-            SDL_RenderFillRect(renderer, &rect);
-        }
-    }
-
-    SDL_SetRenderTarget(renderer, NULL);
-    return texture;
 }

@@ -289,7 +289,7 @@ CMakeFiles/untitled.dir/main.cpp.o: \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
  /home/damian/CLionProjects/Game_CPP/Pixel.h \
- /home/damian/CLionProjects/Game_CPP/ImportIMG.h \
+ /home/damian/CLionProjects/Game_CPP/LoadLevel.h \
  /usr/include/SDL2/SDL_surface.h \
- /home/damian/CLionProjects/Game_CPP/LoadAnimation.h \
- /home/damian/CLionProjects/Game_CPP/LoadLevel.h
+ /home/damian/CLionProjects/Game_CPP/ImportIMG.h \
+ /home/damian/CLionProjects/Game_CPP/LoadAnimation.h
