@@ -5,21 +5,21 @@
 		<Option title="untitled"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/damian/Pulpit/CPP/Game/cmake-build-debug"/>
+				<Option working_dir="/home/damian/CLionProjects/Game_CPP/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="untitled">
-				<Option output="/home/damian/Pulpit/CPP/Game/cmake-build-debug/untitled" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/damian/Pulpit/CPP/Game/cmake-build-debug"/>
+				<Option output="/home/damian/CLionProjects/Game_CPP/cmake-build-debug/untitled" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/damian/CLionProjects/Game_CPP/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -34,15 +34,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled"/>
+					<CompileFile command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="untitled/fast">
-				<Option output="/home/damian/Pulpit/CPP/Game/cmake-build-debug/untitled" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/damian/Pulpit/CPP/Game/cmake-build-debug"/>
+				<Option output="/home/damian/CLionProjects/Game_CPP/cmake-build-debug/untitled" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/damian/CLionProjects/Game_CPP/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -57,53 +57,59 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled/fast"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled/fast"/>
+					<CompileFile command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/damian/Pulpit/CPP/Game/cmake-build-debug"/>
+				<Option working_dir="/home/damian/CLionProjects/Game_CPP/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/damian/Pulpit/CPP/Game/cmake-build-debug"/>
+				<Option working_dir="/home/damian/CLionProjects/Game_CPP/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/gmake -j4 -f &quot;/home/damian/Pulpit/CPP/Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j2 -f &quot;/home/damian/CLionProjects/Game_CPP/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/damian/Pulpit/CPP/Game/ImportIMG.h">
+		<Unit filename="/home/damian/CLionProjects/Game_CPP/ImportIMG.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/home/damian/Pulpit/CPP/Game/LoadAnimation.h">
+		<Unit filename="/home/damian/CLionProjects/Game_CPP/LoadAnimation.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/home/damian/Pulpit/CPP/Game/Player.h">
+		<Unit filename="/home/damian/CLionProjects/Game_CPP/LoadLevel.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/home/damian/Pulpit/CPP/Game/main.cpp">
+		<Unit filename="/home/damian/CLionProjects/Game_CPP/Pixel.h">
 			<Option target="untitled"/>
 		</Unit>
-		<Unit filename="/home/damian/Pulpit/CPP/Game/CMakeLists.txt">
+		<Unit filename="/home/damian/CLionProjects/Game_CPP/Player.h">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="/home/damian/CLionProjects/Game_CPP/main.cpp">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="/home/damian/CLionProjects/Game_CPP/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/damian/Pulpit/CPP/Game/../../../../../usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config-version.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\"/>
+		<Unit filename="/home/damian/CLionProjects/Game_CPP/../../../../usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\"/>
 		</Unit>
-		<Unit filename="/home/damian/Pulpit/CPP/Game/../../../../../usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\"/>
+		<Unit filename="/home/damian/CLionProjects/Game_CPP/../../../../usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

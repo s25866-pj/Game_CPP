@@ -8,6 +8,8 @@ include_directories(${SDL_2_INCLUDE_DIRS})
 add_executable(untitled main.cpp
         Player.h
         ImportIMG.h
-        LoadAnimation.h)
+        LoadAnimation.h
+        LoadLevel.h
+        Pixel.h)
 #target_link_libraries(untitled ${SDL2_LIBRARIES})
 target_link_libraries(untitled PRIVATE SDL2 SDL2_image)

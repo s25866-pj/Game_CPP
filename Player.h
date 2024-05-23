@@ -6,13 +6,17 @@
 #define UNTITLED_PLAYER_H
 
 #include <SDL2/SDL_keycode.h>
-int windowW=640*2,windowH=400*2;
+#include <vector>
+#include "Pixel.h"
+
+using namespace std;
+int windowW=640,windowH=400;
 class Player {
 public:
     int pos_X = 0;
     int pos_Y = 0;
-    int width = 64*2;
-    int height = 40*2;
+    int width = 64;
+    int height = 40;
     int speed = 5;
     //gravity and jump
     int jumpStartPos_Y = 0;
@@ -81,4 +85,17 @@ public:
     }
 
 };
+int pixelW =32,pixelH=32,oldPixelW=0,oldPixelH=0,newPixelW,newPixelH;
+void checkPlayerPixel(Player player, vector<vector<Pixel>> vector1) {
+    newPixelH=(int)player.pos_X/pixelH;
+    newPixelW=(int)player.pos_Y/pixelW;
+
+    if(newPixelH!=oldPixelH || newPixelW!=oldPixelW){
+        oldPixelH=newPixelH;
+        oldPixelW=newPixelW;
+        cout<<vector1[newPixelW][newPixelH].solid<<endl;
+        //cout<<newPixelW<<"-"<<oldPixelW<<" | "<<newPixelH<<"-"<<oldPixelH<<endl;
+
+    }
+}
 #endif //UNTITLED_PLAYER_H
