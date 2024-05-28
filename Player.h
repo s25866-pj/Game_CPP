@@ -1,7 +1,3 @@
-//
-// Created by damian on 15.05.24.
-//
-
 #ifndef UNTITLED_PLAYER_H
 #define UNTITLED_PLAYER_H
 
@@ -14,21 +10,22 @@ using namespace std;
 
 class Player {
 public:
-    int pos_X = 0;
-    int pos_Y = 0;
+    int pos_X = 50;
+    int pos_Y = 50;
     int width = 64;
     int height = 40;
     int speed = 5;
-    //gravity and jump
+    // gravity and jump
     int jumpStartPos_Y = 0;
-    int maxJumpHeight=100;
-    float jumpSpeed=-2.25;
-    float gravity = 0.04;
+    int maxJumpHeight = 100;
+    float jumpSpeed = -3.25;
+    float gravity = 0.06;
     float airSpeed = 0;
 
-    bool left = false, right = false, moving = false,jumping = false,inAir=false,onFloor=false;
+    bool left = false, right = false, moving = false, jumping = false, inAir = false, onFloor = false;
     const char* image = "player_sprites.png";
-    vector<vector<Pixel>> masks =CreteMask();
+    vector<vector<Pixel>> masks = CreteMask();
+
     void handleInput(SDL_Keycode sym, bool keyPressed) {
         if (keyPressed) {
             if (sym == SDLK_a) {
@@ -39,7 +36,7 @@ public:
             }
             if (sym == SDLK_SPACE && !jumping && !inAir) {
                 jumping = true;
-                inAir=true;
+                inAir = true;
             }
         } else {
             if (sym == SDLK_a) {
@@ -54,8 +51,6 @@ public:
                 jumping = false;
             }
         }
-
-        // Update moving state based on input
         moving = left || right;
     }
 
@@ -63,32 +58,35 @@ public:
         return pos_Y + height >= windowH;
     }
 
-    int pixelW =32,pixelH=32,oldPixelW=0,oldPixelH=0,newPixelW,newPixelH;
-    bool checkPlayerPixel(vector<vector<Pixel>> vector1) {
-        newPixelH=(int)pos_X/pixelH;
-        newPixelW=(int)pos_Y/pixelW;
+    int pixel = 32, oldPixelLH = 0, oldPixelLD = 0, oldPixelRH = 0, oldPixelRD = 0, newPixelLH, newPixelLD, newPixelRH, newPixelRD;
 
-        if(newPixelH!=oldPixelH || newPixelW!=oldPixelW){
-            oldPixelH=newPixelH;
-            oldPixelW=newPixelW;
-            cout<<vector1[newPixelH][newPixelW].solid<<endl;
-            return vector1[newPixelH][newPixelW].solid;
+    bool checkPlayerPixel(vector<vector<Pixel>>& vector1) {
+        newPixelLH = pos_X / pixel;
+        newPixelLD = (pos_Y + height) / pixel;
+        newPixelRH = (pos_X + width) / pixel;
+        newPixelRD = (pos_Y + height) / pixel;
 
-            //cout<<newPixelW<<"-"<<oldPixelW<<" | "<<newPixelH<<"-"<<oldPixelH<<endl;
-
+        cout<<vector1[newPixelLH][newPixelLD].solid<<"|"<<vector1[newPixelRH][newPixelRD].solid<<endl;
+        if(vector1[newPixelLH][newPixelLD].solid || vector1[newPixelRH][newPixelRD].solid){
+            return false;
+        }else{
+            return true;
         }
+
+
     }
+
     void updatePosition() {
         if (left && !right) {
-            if(checkPlayerPixel(masks)){
-                pos_X -= speed;
+            pos_X -= speed;
+            if (!checkPlayerPixel(masks)) {
+                pos_X += speed; // revert movement
             }
-
         } else if (!left && right) {
-            if(checkPlayerPixel(masks)){
-                pos_X += speed;
+            pos_X += speed;
+            if (!checkPlayerPixel(masks)) {
+                pos_X -= speed; // revert movement
             }
-
         }
 
         if (jumping && inAir) {
@@ -109,8 +107,7 @@ public:
     }
 };
 
-
-SDL_Texture* DrawMap(SDL_Renderer* renderer, vector<vector<Pixel>> &vector1) {
+SDL_Texture* DrawMap(SDL_Renderer* renderer, vector<vector<Pixel>>& vector1) {
     int pixelWidth = vector1[0][0].size_X;
     int pixelHeight = vector1[0][0].size_Y;
     int textureWidth = pixelWidth * vector1.size();
@@ -133,4 +130,4 @@ SDL_Texture* DrawMap(SDL_Renderer* renderer, vector<vector<Pixel>> &vector1) {
     SDL_SetRenderTarget(renderer, NULL);
     return texture;
 }
-#endif //UNTITLED_PLAYER_H
+#endif // UNTITLED_PLAYER_H
