@@ -11,13 +11,18 @@ using namespace std;
 class Player {
 public:
     int pos_X = 50;
-    int pos_Y = 50;
-    int width = 64;
-    int height = 40;
+    int pos_Y = 150;
+    int width = (int)(32*1.5);
+    int height = (int)(20*1.5);
     int speed = 5;
-    // gravity and jump
+    // Hitbox adjustments
+    int hitboxOffsetLeft = 10;
+    int hitboxOffsetRight = 5;
+    int hitboxWidth = width - hitboxOffsetLeft - hitboxOffsetRight;
+
+    // Gravity and jump
     int jumpStartPos_Y = 0;
-    int maxJumpHeight = 100;
+    int maxJumpHeight = 50; // Zmniejszona maksymalna wysokość skoku
     float jumpSpeed = -3.25;
     float gravity = 0.06;
     float airSpeed = 0;
@@ -37,6 +42,7 @@ public:
             if (sym == SDLK_SPACE && !jumping && !inAir) {
                 jumping = true;
                 inAir = true;
+                airSpeed = jumpSpeed;
             }
         } else {
             if (sym == SDLK_a) {
@@ -55,47 +61,91 @@ public:
     }
 
     bool isEntityOnFloor() {
-        return pos_Y + height >= windowH;
+        // Check the pixels directly below the player
+        newPixelLH = (pos_X + hitboxOffsetLeft) / pixel;
+        newPixelLD = (pos_Y + height + 1) / pixel;
+        newPixelRH = (pos_X + hitboxOffsetLeft + hitboxWidth) / pixel;
+        newPixelRD = (pos_Y + height + 1) / pixel;
+
+        return masks[newPixelLH][newPixelLD].solid || masks[newPixelRH][newPixelRD].solid;
     }
 
-    int pixel = 32, oldPixelLH = 0, oldPixelLD = 0, oldPixelRH = 0, oldPixelRD = 0, newPixelLH, newPixelLD, newPixelRH, newPixelRD;
+    bool isEntityOnCeiling() {
+        // Check the pixels directly above the player
+        newPixelLH = (pos_X + hitboxOffsetLeft) / pixel;
+        newPixelLU = (pos_Y - 1) / pixel;
+        newPixelRH = (pos_X + hitboxOffsetLeft + hitboxWidth) / pixel;
+        newPixelRU = (pos_Y - 1) / pixel;
 
-    bool checkPlayerPixel(vector<vector<Pixel>>& vector1) {
-        newPixelLH = pos_X / pixel;
+        return masks[newPixelLH][newPixelLU].solid || masks[newPixelRH][newPixelRU].solid;
+    }
+
+    bool isEntityOnLeftWall() {
+        // Check the pixels directly to the left of the player
+        newPixelLL = (pos_X + hitboxOffsetLeft - 1) / pixel;
+        newPixelUL = pos_Y / pixel;
+        newPixelDL = (pos_Y + height) / pixel;
+
+        return masks[newPixelLL][newPixelUL].solid || masks[newPixelLL][newPixelDL].solid;
+    }
+
+    bool isEntityOnRightWall() {
+        // Check the pixels directly to the right of the player
+        newPixelRL = (pos_X + hitboxOffsetLeft + hitboxWidth + 1) / pixel;
+        newPixelUR = pos_Y / pixel;
+        newPixelDR = (pos_Y + height) / pixel;
+
+        return masks[newPixelRL][newPixelUR].solid || masks[newPixelRL][newPixelDR].solid;
+    }
+
+    int pixel = 32, oldPixelLH = 0, oldPixelLD = 0, oldPixelRH = 0, oldPixelRD = 0, newPixelLH, newPixelLD, newPixelRH, newPixelRD, newPixelLU, newPixelRU, newPixelLL, newPixelUL, newPixelDL, newPixelRL, newPixelUR, newPixelDR;
+
+    bool checkPlayerPixel() {
+        newPixelLH = (pos_X + hitboxOffsetLeft) / pixel;
         newPixelLD = (pos_Y + height) / pixel;
-        newPixelRH = (pos_X + width) / pixel;
+        newPixelRH = (pos_X + hitboxOffsetLeft + hitboxWidth) / pixel;
         newPixelRD = (pos_Y + height) / pixel;
 
-        cout<<vector1[newPixelLH][newPixelLD].solid<<"|"<<vector1[newPixelRH][newPixelRD].solid<<endl;
-        if(vector1[newPixelLH][newPixelLD].solid || vector1[newPixelRH][newPixelRD].solid){
+//        cout << masks[newPixelLH][newPixelLD].solid << "|" << masks[newPixelRH][newPixelRD].solid << endl;
+        if (masks[newPixelLH][newPixelLD].solid || masks[newPixelRH][newPixelRD].solid) {
             return false;
-        }else{
+        } else {
             return true;
         }
-
-
     }
 
     void updatePosition() {
+        // Handle horizontal movement
         if (left && !right) {
             pos_X -= speed;
-            if (!checkPlayerPixel(masks)) {
+            if (isEntityOnLeftWall()) {
                 pos_X += speed; // revert movement
             }
         } else if (!left && right) {
             pos_X += speed;
-            if (!checkPlayerPixel(masks)) {
+            if (isEntityOnRightWall()) {
                 pos_X -= speed; // revert movement
             }
         }
 
+        // Handle vertical movement
         if (jumping && inAir) {
             pos_Y += jumpSpeed;
             airSpeed = jumpSpeed;
+            if (isEntityOnCeiling()) {
+                pos_Y -= jumpSpeed; // revert movement
+                airSpeed = -airSpeed; // bounce off the ceiling
+                jumping = false;
+            }
         } else if (!onFloor) {
             pos_Y += airSpeed;
             airSpeed += gravity;
+            if (isEntityOnCeiling()) {
+                pos_Y -= airSpeed; // revert movement
+                airSpeed = -airSpeed; // bounce off the ceiling
+            }
         }
+
         if (pos_Y <= jumpStartPos_Y - maxJumpHeight) {
             jumping = false;
         }
@@ -104,9 +154,16 @@ public:
             pos_Y += airSpeed;
             airSpeed += gravity;
         }
+
+        // Check if the player is on the floor
+        onFloor = isEntityOnFloor();
+        if (onFloor) {
+            airSpeed = 0;
+            inAir = false;
+            pos_Y -= 1; // Adjust position to be exactly on the floor
+        }
     }
 };
-
 SDL_Texture* DrawMap(SDL_Renderer* renderer, vector<vector<Pixel>>& vector1) {
     int pixelWidth = vector1[0][0].size_X;
     int pixelHeight = vector1[0][0].size_Y;
@@ -130,4 +187,5 @@ SDL_Texture* DrawMap(SDL_Renderer* renderer, vector<vector<Pixel>>& vector1) {
     SDL_SetRenderTarget(renderer, NULL);
     return texture;
 }
+
 #endif // UNTITLED_PLAYER_H
